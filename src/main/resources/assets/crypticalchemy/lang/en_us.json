@@ -1,0 +1,13 @@
+{
+  "itemGroup.crypticalchemy": "Example Mod Tab",
+  "block.crypticalchemy.example_block": "Example Block",
+  "item.crypticalchemy.example_item": "Example Item",
+
+  "crypticalchemy.configuration.title": "Cryptic Alchemy Configs",
+  "crypticalchemy.configuration.section.crypticalchemy.common.toml": "Cryptic Alchemy Configs",
+  "crypticalchemy.configuration.section.crypticalchemy.common.toml.title": "Cryptic Alchemy Configs",
+  "crypticalchemy.configuration.items": "Item List",
+  "crypticalchemy.configuration.logDirtBlock": "Log Dirt Block",
+  "crypticalchemy.configuration.magicNumberIntroduction": "Magic Number Text",
+  "crypticalchemy.configuration.magicNumber": "Magic Number"
+}
