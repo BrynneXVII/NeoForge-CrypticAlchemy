@@ -35,6 +35,7 @@ public class CrypticAlchemyCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         //ITEMS IN CRYPTIC ALCHEMY BLOCKS TAB
                         output.accept(CrypticAlchemyBlocks.MIST_GRASS_BLOCK);
+                        output.accept(CrypticAlchemyBlocks.MIST_GRASS_BUSH);
                     })
                     .build());
 

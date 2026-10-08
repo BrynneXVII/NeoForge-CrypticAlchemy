@@ -12,10 +12,10 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import org.jspecify.annotations.NonNull;
 
-public class orientableHayBlock extends Block {
+public class OrientableHayBlock extends Block {
     public static final EnumProperty<Direction> FACING;
 
-    public orientableHayBlock(Properties properties) {
+    public OrientableHayBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }

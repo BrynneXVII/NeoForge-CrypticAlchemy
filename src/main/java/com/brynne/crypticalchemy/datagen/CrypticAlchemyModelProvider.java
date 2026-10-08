@@ -8,8 +8,12 @@ import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 
 import static net.minecraft.client.data.models.BlockModelGenerators.ROTATIONS_COLUMN_WITH_FACING;
@@ -29,6 +33,10 @@ public class CrypticAlchemyModelProvider extends ModelProvider {
         /* BLOCKS */
         MultiVariant mist_grass_block_model = plainVariant(TexturedModel.CUBE_BOTTOM_TOP.create(CrypticAlchemyBlocks.MIST_GRASS_BLOCK.get(), blockModels.modelOutput));
         blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(CrypticAlchemyBlocks.MIST_GRASS_BLOCK.get(),mist_grass_block_model).with(ROTATIONS_COLUMN_WITH_FACING));
+
+        blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(CrypticAlchemyBlocks.MIST_GRASS_BUSH.get()).with(PropertyDispatch.initial(BlockStateProperties.AGE_2)
+                .generate((age) -> plainVariant(blockModels.createSuffixedVariant(CrypticAlchemyBlocks.MIST_GRASS_BUSH.get(), "_stage" + age, ModelTemplates.CROSS, TextureMapping::cross)))));
+
 
 
     }
