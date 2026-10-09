@@ -3,7 +3,13 @@ package com.brynne.crypticalchemy;
 import com.brynne.crypticalchemy.block.CrypticAlchemyBlocks;
 import com.brynne.crypticalchemy.creativemodetab.CrypticAlchemyCreativeModeTabs;
 import com.brynne.crypticalchemy.item.CrypticAlchemyItems;
+import com.brynne.crypticalchemy.particle.CrypticAlchemyParticles;
+import com.sun.jna.platform.win32.WinNT;
+import net.minecraft.client.particle.FireflyParticle;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -37,6 +43,7 @@ public class CrypticAlchemy {
         CrypticAlchemyCreativeModeTabs.register(modEventBus);
         CrypticAlchemyItems.register(modEventBus);
         CrypticAlchemyBlocks.register(modEventBus);
+        CrypticAlchemyParticles.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (CrypticAlchemy) to respond directly to events.
@@ -66,4 +73,5 @@ public class CrypticAlchemy {
     public void onServerStarting(ServerStartingEvent event) {
 
     }
+
 }

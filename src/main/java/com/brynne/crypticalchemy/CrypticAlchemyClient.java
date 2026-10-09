@@ -1,12 +1,15 @@
 package com.brynne.crypticalchemy;
 
+import com.brynne.crypticalchemy.particle.CrypticAlchemyParticles;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.particle.FireflyParticle;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
@@ -28,4 +31,12 @@ public class CrypticAlchemyClient {
         CrypticAlchemy.LOGGER.info("HELLO FROM CLIENT SETUP");
         CrypticAlchemy.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
     }
+
+    /* Particle event registering */
+    @SubscribeEvent // on the mod event bus only on the physical client
+    public static void registerParticleProviders(RegisterParticleProvidersEvent event) {
+        // #registerSpriteSet MUST be used when dealing with particle descriptions.
+        event.registerSpriteSet(CrypticAlchemyParticles.MIST_GRASS_PARTICLE.get(), FireflyParticle.FireflyProvider::new);
+    }
+
 }

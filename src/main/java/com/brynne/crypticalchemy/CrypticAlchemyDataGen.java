@@ -30,5 +30,6 @@ public class CrypticAlchemyDataGen {
         generator.addProvider(true, new CrypticAlchemyDataMapProvider(packOutput, lookupProvider));
 
         event.createReloadableRegistryObjects(new RegistrySetBuilder().add(Registries.LOOT_TABLE, new LootTableProvider(Set.of(), List.of(new LootTableProvider.SubProviderEntry(CrypticAlchemyBlockLootTableProvider::new, LootContextParamSets.BLOCK)))));
+        event.createProvider(CrypticAlchemyParticleDescriptionProvider::new);
     }
 }
